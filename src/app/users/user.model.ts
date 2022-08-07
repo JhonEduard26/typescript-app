@@ -1,15 +1,11 @@
-enum ROLES {
+export enum ROLES {
   ADMIN = 'admin',
   SELLER = 'seller',
   CUSTOMER = 'customer',
 }
 
-type User = {
+export interface User {
+  id: string | number
   username: string
   role: ROLES
-}
-
-const jhonUser: User = {
-  username: 'jhoneduard',
-  role: ROLES.ADMIN
 }
