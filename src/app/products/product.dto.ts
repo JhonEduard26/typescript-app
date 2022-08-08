@@ -6,6 +6,8 @@ export interface CreateProductDto extends Omit<Product, 'id' | 'createdAt' | 'up
 
 export interface UpdatedProductDto extends Partial<CreateProductDto> { }
 
-export interface GetProductsDto extends Readonly<Partial<Product>> { }
+export interface GetProductsDto extends Readonly<Partial<Omit<Product, 'tags'>>> {
+  readonly tags: ReadonlyArray<string>
+}
 
 export interface GetProductByIdDto extends Product { }
