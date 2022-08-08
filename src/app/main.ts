@@ -1,21 +1,16 @@
-import { addProduct } from "./products/product.service";
+import { faker } from '@faker-js/faker';
+import { addProduct, products } from "./products/product.service";
 
 addProduct({
-  id: 'efsef',
-  title: 'mouse',
-  createdAt: new Date(),
-  updatedAt: new Date(),
+  title: faker.commerce.product(),
+  description: faker.commerce.productDescription(),
+  price: faker.commerce.price(10, 2000, 0, '$'),
+  color: faker.commerce.color(),
   stock: 100,
-  color: 'red',
-  description: 'loremeofjsoefijsiofjsfejsf',
-  image: 'httpsfsefesfsefesfs',
-  isNew: true,
-  price: 1000,
+  image: faker.image.imageUrl(),
+  isNew: faker.datatype.boolean(),
   tags: [],
-  category: {
-    id: 'efesfsef',
-    createdAt: new Date(),
-    updatedAt: new Date(),
-    name: 'tools'
-  }
+  categoryId: faker.datatype.uuid()
 })
+
+console.log(products)

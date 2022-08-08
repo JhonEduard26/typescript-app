@@ -7,10 +7,10 @@ export interface Product extends BaseModel {
   title: string
   image: string
   description: string
+  price: string
   stock: number
   size?: Sizes
   color: string
-  price: number
   category: Category
   isNew: boolean
   tags: string[]
